@@ -14,8 +14,6 @@ En statisk, mobilvennlig PWA for å finne og følge støtteordninger for musiker
 - Nettleservarsler ved åpning/bakgrunnssynk der nettleseren støtter det.
 - Kalender-eksport (`.ics`) for pålitelige systemvarsler på mobil.
 - Installerbar PWA med offline-cache.
-- Innebygd søknadsassistent med åtte målrettede maler for innspilling, turné, stipend, utstyr/lokaler, arrangører, komposisjon, markedsføring/eksport og barn/unge.
-- Redigerbart førsteutkast som kan kopieres eller lastes ned som tekst. Utkast og skjemadata behandles og lagres lokalt i nettleseren.
 - Daglig GitHub Action som ruller frem gjentakende årlige frister og validerer data.
 
 ## Publiser på GitHub Pages
@@ -51,12 +49,6 @@ Hver oppføring bør minst ha:
 Selve nettsiden beregner status fra dagens dato, så en frist flyttes automatisk fra «snart» til «haster» og «utløpt». GitHub Action ruller frem ordninger med stabile, årlige fristmønstre.
 
 Engangsfrister, lokale ordninger, regelendringer og nye utlysninger må fortsatt kildekontrolleres og legges inn. En helt uttømmende nasjonal database krever redaksjonelt ansvar eller egne integrasjoner mot hver støtteaktør.
-
-## Søknadsassistent og eventuell AI
-
-Søknadsassistenten bruker målrettede, lokale maler og krever ingen konto, API-nøkkel eller backend. Den lager et strukturert førsteutkast basert på brukerens egne opplysninger og den valgte støtteordningen.
-
-En ekte generativ AI-tjeneste kan kobles til senere, men API-nøkler må aldri legges direkte i JavaScript på GitHub Pages. Bruk i så fall en sikker serverless funksjon eller egen backend som mellomledd.
 
 ## Varsler og GitHub Pages
 

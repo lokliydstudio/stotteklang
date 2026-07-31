@@ -2,8 +2,7 @@ const STORAGE = {
   followed: 'stotteklang-followed-v1',
   categories: 'stotteklang-categories-v1',
   reminders: 'stotteklang-reminders-v1',
-  notified: 'stotteklang-notified-v1',
-  assistantDraft: 'stotteklang-assistant-draft-v1'
+  notified: 'stotteklang-notified-v1'
 };
 
 const state = {
@@ -17,7 +16,6 @@ const state = {
   followed: new Set(JSON.parse(localStorage.getItem(STORAGE.followed) || '[]')),
   subscribedCategories: new Set(JSON.parse(localStorage.getItem(STORAGE.categories) || '[]')),
   reminderDays: new Set(JSON.parse(localStorage.getItem(STORAGE.reminders) || '[30,14,7,1]')),
-  assistantText: '',
   deferredInstall: null
 };
 
@@ -38,67 +36,6 @@ const categoryIcons = {
   'Markedsføring': '○',
   'Barn og unge': '☆'
 };
-
-const APPLICATION_TEMPLATES = {
-  recording: {
-    label: 'Innspilling og utgivelse',
-    guidance: 'Beskriv den kunstneriske retningen, hvem som medvirker, produksjonsplanen og hvordan utgivelsen skal nå publikum.',
-    focus: 'kunstnerisk idé, produksjon og lansering',
-    sectionTitle: 'Produksjon og utgivelsesplan',
-    checklist: ['Repertoar og kunstnerisk retning', 'Produsent, studio og medvirkende', 'Innspillings-, miks- og masterplan', 'Utgivelsesdato, distribusjon og lansering']
-  },
-  tour: {
-    label: 'Turné og konserter',
-    guidance: 'Vær konkret om spillesteder, tidsrom, kunstnerisk program, logistikk og hvordan turneen bygger publikum.',
-    focus: 'kunstnerisk program, gjennomføring og publikumsarbeid',
-    sectionTitle: 'Turné- og gjennomføringsplan',
-    checklist: ['Bekreftede eller planlagte spillesteder', 'Reiserute og tekniske behov', 'Honorarer, reise og overnatting', 'Publikums- og kommunikasjonsplan']
-  },
-  stipend: {
-    label: 'Stipend og kunstnerisk utvikling',
-    guidance: 'Forklar hva du skal fordype deg i, hvorfor tiden er riktig nå og hvilken langsiktig betydning perioden vil ha for kunstnerskapet.',
-    focus: 'kunstnerisk fordypning og langsiktig utvikling',
-    sectionTitle: 'Arbeidsperiode og utviklingsmål',
-    checklist: ['Tydelig kunstnerisk problemstilling', 'Aktiviteter i stipendperioden', 'Realistisk tidsbruk', 'Betydning for videre kunstnerskap']
-  },
-  equipment: {
-    label: 'Utstyr, studio og lokaler',
-    guidance: 'Beskriv behovet, hvem tiltaket kommer til gode, hvordan utstyret eller lokalet skal brukes og hvorfor investeringen er varig.',
-    focus: 'behov, bruk, kvalitet og langsiktig verdi',
-    sectionTitle: 'Behov og bruk av investeringen',
-    checklist: ['Dagens situasjon og dokumentert behov', 'Konkret utstyrs- eller tiltaksoversikt', 'Brukere, aktivitet og tilgjengelighet', 'Drift, vedlikehold og varighet']
-  },
-  organizer: {
-    label: 'Arrangør, festival og arena',
-    guidance: 'Vis en tydelig programprofil, realistisk produksjon, publikumsarbeid og hvordan prosjektet styrker det lokale eller nasjonale musikklivet.',
-    focus: 'programprofil, produksjon og publikumsutvikling',
-    sectionTitle: 'Program og arrangementsplan',
-    checklist: ['Kunstnerisk profil og programidé', 'Produksjon, bemanning og sikkerhet', 'Publikum, inkludering og tilgjengelighet', 'Lokal forankring og samarbeid']
-  },
-  composition: {
-    label: 'Komposisjon og nytt verk',
-    guidance: 'Beskriv verkideen, formatet, den kunstneriske prosessen og hvordan verket skal ferdigstilles, framføres eller formidles.',
-    focus: 'verkidé, skapende prosess og formidling',
-    sectionTitle: 'Skapende prosess og ferdigstilling',
-    checklist: ['Verkets idé, format og omfang', 'Kompositorisk metode og arbeidsplan', 'Utøvere, bestiller eller samarbeidspartner', 'Plan for framføring, publisering eller formidling']
-  },
-  marketing: {
-    label: 'Markedsføring og eksport',
-    guidance: 'Knytt aktivitetene til konkrete målgrupper og markeder. Beskriv tiltak, partnere, tidslinje og målbare resultater.',
-    focus: 'marked, synlighet og målbare resultater',
-    sectionTitle: 'Markeds- og lanseringsplan',
-    checklist: ['Prioriterte målgrupper eller territorier', 'Konkrete markedsaktiviteter', 'Partnere, medier og bransjekontakter', 'Mål og hvordan effekten skal måles']
-  },
-  youth: {
-    label: 'Barn og unge',
-    guidance: 'Beskriv medvirkning, læring, inkludering og hvordan prosjektet gir barn og unge reell tilgang til musikalske aktiviteter.',
-    focus: 'deltakelse, mestring, inkludering og trygg gjennomføring',
-    sectionTitle: 'Deltakelse og pedagogisk opplegg',
-    checklist: ['Alder og målgruppe', 'Medvirkning og læringsmål', 'Inkludering, tilgjengelighet og trygghet', 'Kompetanse hos ansvarlige og samarbeidspartnere']
-  }
-};
-
-const ASSISTANT_FIELD_IDS = ['assistantTemplate','assistantGrant','assistantApplicant','assistantProject','assistantIdea','assistantGoals','assistantAudience','assistantPlan','assistantBudget','assistantFunding','assistantImpact'];
 
 function escapeHtml(value = '') {
   return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
@@ -269,195 +206,12 @@ function openGrant(id) {
     </div>
     <div class="detail-actions">
       <a class="button button-primary" href="${escapeHtml(grant.applyUrl)}" target="_blank" rel="noreferrer">Gå til søknad ↗</a>
-      <button class="button button-secondary" id="dialogAssistantButton">Skriv søknadsutkast</button>
       <button class="button button-secondary" id="dialogFollowButton">${following ? 'Slutt å følge' : 'Følg ordningen'}</button>
       <a class="button button-ghost" href="${escapeHtml(grant.sourceUrl)}" target="_blank" rel="noreferrer">Offisiell kilde ↗</a>
     </div>
     <p class="fine-print">Kilde kontrollert ${fmtDate.format(new Date(`${grant.verifiedAt}T12:00:00`))}. Frister kan endres; kontroller alltid den offisielle siden.</p>`;
-  el('dialogAssistantButton').addEventListener('click', () => startApplicationForGrant(grant.id));
   el('dialogFollowButton').addEventListener('click', () => { toggleFollow(grant.id); openGrant(grant.id); });
   if (!el('grantDialog').open) el('grantDialog').showModal();
-}
-
-
-function inferTemplateFromGrant(grant) {
-  const categories = (grant?.categories || []).map(value => value.toLocaleLowerCase('nb-NO'));
-  if (categories.some(value => value.includes('innspilling'))) return 'recording';
-  if (categories.some(value => value.includes('turné') || value.includes('konsert'))) return 'tour';
-  if (categories.some(value => value.includes('stipend'))) return 'stipend';
-  if (categories.some(value => value.includes('utstyr') || value.includes('lokaler'))) return 'equipment';
-  if (categories.some(value => value.includes('komposisjon'))) return 'composition';
-  if (categories.some(value => value.includes('markedsføring') || value.includes('eksport'))) return 'marketing';
-  if (categories.some(value => value.includes('barn') || value.includes('unge'))) return 'youth';
-  return 'organizer';
-}
-
-function populateAssistantGrants() {
-  const select = el('assistantGrant');
-  if (!select) return;
-  const current = select.value;
-  const options = [...state.grants]
-    .sort((a,b) => a.name.localeCompare(b.name, 'nb'))
-    .map(grant => `<option value="${escapeHtml(grant.id)}">${escapeHtml(grant.name)} · ${escapeHtml(grant.provider)}</option>`)
-    .join('');
-  select.innerHTML = `<option value="">Ingen bestemt ordning</option>${options}`;
-  if ([...select.options].some(option => option.value === current)) select.value = current;
-}
-
-function updateAssistantGuidance() {
-  const template = APPLICATION_TEMPLATES[el('assistantTemplate')?.value] || APPLICATION_TEMPLATES.recording;
-  const selectedGrant = state.grants.find(grant => grant.id === el('assistantGrant')?.value);
-  const sourceHint = selectedGrant
-    ? ` Du har valgt <strong>${escapeHtml(selectedGrant.name)}</strong>; bruk kriteriene på den offisielle siden som siste kontroll.`
-    : '';
-  el('assistantGuidance').innerHTML = `<strong>Tips for denne malen:</strong> ${escapeHtml(template.guidance)}${sourceHint}`;
-}
-
-function saveAssistantDraft() {
-  const draft = {};
-  ASSISTANT_FIELD_IDS.forEach(id => { if (el(id)) draft[id] = el(id).value; });
-  localStorage.setItem(STORAGE.assistantDraft, JSON.stringify(draft));
-}
-
-function loadAssistantDraft() {
-  let draft = {};
-  try { draft = JSON.parse(localStorage.getItem(STORAGE.assistantDraft) || '{}'); } catch (_) {}
-  ASSISTANT_FIELD_IDS.forEach(id => {
-    if (!el(id) || draft[id] === undefined) return;
-    if (id === 'assistantGrant' && ![...el(id).options].some(option => option.value === draft[id])) return;
-    el(id).value = draft[id];
-  });
-  updateAssistantGuidance();
-}
-
-function collectAssistantData() {
-  const grant = state.grants.find(item => item.id === el('assistantGrant').value);
-  return {
-    templateKey: el('assistantTemplate').value,
-    template: APPLICATION_TEMPLATES[el('assistantTemplate').value] || APPLICATION_TEMPLATES.recording,
-    grant,
-    applicant: el('assistantApplicant').value.trim(),
-    project: el('assistantProject').value.trim(),
-    idea: el('assistantIdea').value.trim(),
-    goals: el('assistantGoals').value.trim(),
-    audience: el('assistantAudience').value.trim(),
-    plan: el('assistantPlan').value.trim(),
-    budget: el('assistantBudget').value.trim(),
-    funding: el('assistantFunding').value.trim(),
-    impact: el('assistantImpact').value.trim()
-  };
-}
-
-function sentence(value, fallback) {
-  const text = String(value || '').trim();
-  if (!text) return fallback;
-  return /[.!?]$/.test(text) ? text : `${text}.`;
-}
-
-function generateApplicationDraft(event) {
-  event?.preventDefault();
-  const data = collectAssistantData();
-  if (!data.idea && !data.goals) {
-    showToast('Skriv litt om prosjektet eller målet først');
-    el('assistantIdea').focus();
-    return;
-  }
-  const applicant = data.applicant || 'Søker';
-  const project = data.project || 'Prosjektet';
-  const grantContext = data.grant ? `${data.grant.name} hos ${data.grant.provider}` : 'den aktuelle støtteordningen';
-  const budgetText = data.budget || 'må ferdigstilles';
-  const fundingText = data.funding || 'må avklares';
-  const projectIntro = `${applicant} søker støtte til «${project}», et prosjekt med hovedvekt på ${data.template.focus}. ${sentence(data.idea, 'Prosjektet skal utvikles og gjennomføres i tråd med en tydelig kunstnerisk og praktisk plan.')}`;
-  const goalText = sentence(data.goals, 'Målet er å skape et kunstnerisk relevant resultat med tydelig verdi for prosjektets målgruppe og for søkerens videre utvikling.');
-  const planText = sentence(data.plan, 'Prosjektet deles inn i forberedelse, gjennomføring og ferdigstilling, med ansvar og milepæler som konkretiseres før oppstart.');
-  const audienceText = sentence(data.audience, 'Målgruppen defineres nærmere ut fra prosjektets format, geografi og formidlingsplan.');
-  const impactText = sentence(data.impact, 'Søker vil bidra med egeninnsats og arbeide videre med supplerende finansiering og samarbeid som styrker gjennomføringen.');
-  const sourceNote = data.grant ? `Ordningen beskrives som: ${data.grant.summary}` : 'Velg gjerne en konkret støtteordning for å gjøre utkastet mer målrettet.';
-
-  const html = `<div class="assistant-generated">
-    <h3>${escapeHtml(project)}</h3>
-    <p class="generated-meta">Førsteutkast · ${escapeHtml(data.template.label)} · tilpasset ${escapeHtml(grantContext)}</p>
-    <h4>Prosjektbeskrivelse</h4>
-    <p>${escapeHtml(projectIntro)}</p>
-    <h4>Kunstnerisk mål og relevans</h4>
-    <p>${escapeHtml(goalText)} Støtten vil gi nødvendig handlingsrom til å prioritere kvalitet, gjennomføring og formidling.</p>
-    <h4>${escapeHtml(data.template.sectionTitle)}</h4>
-    <p>${escapeHtml(planText)}</p>
-    <h4>Målgruppe og forventet effekt</h4>
-    <p>${escapeHtml(audienceText)} ${escapeHtml(impactText)}</p>
-    <h4>Budsjett og finansiering</h4>
-    <p>Prosjektets totale budsjett er ${escapeHtml(budgetText)}, og det søkes om ${escapeHtml(fundingText)} fra ${escapeHtml(grantContext)}. Budsjettet skal være balansert og vise honorarer, produksjonskostnader, egeninnsats, andre tilskudd og eventuelle inntekter på en etterprøvbar måte.</p>
-    <h4>Sjekkliste før innsending</h4>
-    <ul>${data.template.checklist.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
-    <p class="generated-note"><strong>Tilpasning til ordningen:</strong> ${escapeHtml(sourceNote)} Kontroller formål, søknadskriterier, vedlegg, beløpsgrenser og frist hos originalkilden.</p>
-  </div>`;
-
-  const output = el('assistantOutput');
-  output.classList.remove('is-empty');
-  output.innerHTML = html;
-  output.contentEditable = 'true';
-  output.setAttribute('aria-label', 'Redigerbart søknadsutkast');
-  state.assistantText = output.innerText.trim();
-  el('assistantCopy').disabled = false;
-  el('assistantDownload').disabled = false;
-  saveAssistantDraft();
-  showToast('Førsteutkastet er klart');
-}
-
-async function copyAssistantDraft() {
-  const text = el('assistantOutput').innerText.trim();
-  if (!text || el('assistantOutput').classList.contains('is-empty')) return;
-  try {
-    await navigator.clipboard.writeText(text);
-  } catch (_) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    textarea.remove();
-  }
-  showToast('Søknadsutkastet er kopiert');
-}
-
-function downloadAssistantDraft() {
-  const text = el('assistantOutput').innerText.trim();
-  if (!text || el('assistantOutput').classList.contains('is-empty')) return;
-  const project = el('assistantProject').value.trim().toLocaleLowerCase('nb-NO').replace(/[^a-zæøå0-9]+/g, '-').replace(/^-|-$/g, '') || 'soknadsutkast';
-  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = `${project}.txt`;
-  link.click();
-  URL.revokeObjectURL(link.href);
-  showToast('Utkastet er lastet ned');
-}
-
-function resetAssistant() {
-  el('applicationAssistantForm').reset();
-  el('assistantTemplate').value = 'recording';
-  localStorage.removeItem(STORAGE.assistantDraft);
-  const output = el('assistantOutput');
-  output.contentEditable = 'false';
-  output.classList.add('is-empty');
-  output.innerHTML = `<div class="assistant-placeholder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Z"></path><path d="M14 3v4h4M9 12h6M9 16h6M9 8h2"></path></svg><h3>Utkastet vises her</h3><p>Fyll inn feltene til venstre. Assistenten bygger en tydelig prosjektbeskrivelse, begrunnelse, gjennomføringsplan og budsjetttekst.</p></div>`;
-  el('assistantCopy').disabled = true;
-  el('assistantDownload').disabled = true;
-  state.assistantText = '';
-  updateAssistantGuidance();
-  showToast('Søknadsassistenten er nullstilt');
-}
-
-function startApplicationForGrant(grantId) {
-  const grant = state.grants.find(item => item.id === grantId);
-  if (!grant) return;
-  el('assistantGrant').value = grant.id;
-  el('assistantTemplate').value = inferTemplateFromGrant(grant);
-  updateAssistantGuidance();
-  saveAssistantDraft();
-  el('grantDialog').close();
-  document.querySelector('#soknadsassistent').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  window.setTimeout(() => el('assistantApplicant').focus(), 500);
 }
 
 function persistSubscriptions() {
@@ -629,21 +383,6 @@ function bindEvents() {
   el('testNotificationButton').addEventListener('click', () => sendNotification('Test fra Støtteklang', 'Varslene fungerer på denne enheten.'));
   el('exportCalendarButton').addEventListener('click', exportCalendar);
   el('reminderDays').querySelectorAll('input').forEach(input => { input.checked = state.reminderDays.has(Number(input.value)); input.addEventListener('change', updateReminderStorage); });
-  el('applicationAssistantForm').addEventListener('submit', generateApplicationDraft);
-  el('assistantReset').addEventListener('click', resetAssistant);
-  el('assistantCopy').addEventListener('click', copyAssistantDraft);
-  el('assistantDownload').addEventListener('click', downloadAssistantDraft);
-  ASSISTANT_FIELD_IDS.forEach(id => {
-    el(id).addEventListener('input', saveAssistantDraft);
-    el(id).addEventListener('change', () => {
-      if (id === 'assistantGrant' && el(id).value) {
-        const grant = state.grants.find(item => item.id === el(id).value);
-        if (grant) el('assistantTemplate').value = inferTemplateFromGrant(grant);
-      }
-      updateAssistantGuidance();
-      saveAssistantDraft();
-    });
-  });
   document.addEventListener('keydown', event => {
     if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); el('searchInput').focus(); }
     if (event.key === '/' && document.activeElement.tagName !== 'INPUT') { event.preventDefault(); el('searchInput').focus(); }
@@ -661,8 +400,6 @@ async function init() {
     const data = await response.json();
     state.grants = data.grants || [];
     state.meta = data.meta || {};
-    populateAssistantGrants();
-    loadAssistantDraft();
     renderApplicantOptions();
     renderSubscriptions();
     renderAll();
