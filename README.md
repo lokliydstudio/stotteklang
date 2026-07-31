@@ -77,3 +77,8 @@ python -m http.server 8080
 ## Lisens
 
 MIT – bruk og tilpass fritt. Kontroller alltid støttefristene hos offisiell kilde.
+
+
+## Visuelt uttrykk
+
+Forsiden bruker den urbane plakatprofilen med Archivo/Inter, off-white rutenett, lilla, korall, gult og blått. Søknadsassistenten åpnes i en dialog, slik at den opprinnelige forsidelayouten ikke endres. Teksten i plakatgrafikken er «Søk og Skap».
