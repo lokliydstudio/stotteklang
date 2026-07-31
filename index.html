@@ -29,6 +29,7 @@
     <nav class="main-nav" aria-label="Hovedmeny">
       <a href="#oversikt">Finn støtte</a>
       <a href="#slik-fungerer-det">Slik fungerer det</a>
+      <a href="#soknadsassistent">Søknadsassistent</a>
       <a href="#kilder">Kilder</a>
     </nav>
     <nav class="header-actions" aria-label="Hovedvalg">
@@ -63,6 +64,9 @@
       </div>
 
       <div class="hero-visual reveal" data-tilt aria-label="Oversikt over kommende frister">
+        <div class="hero-motto" aria-label="Søk og Skap">
+          <span>Søk</span><span>og</span><span>Skap</span>
+        </div>
         <div class="hero-glow" data-parallax="-0.025" aria-hidden="true"></div>
         <div class="overview-card" data-parallax="-0.045">
           <div class="overview-header">
@@ -116,6 +120,112 @@
           <h3>Søk i tide</h3>
           <p>Få varsler, eksporter kalender og gå direkte til den offisielle søknaden.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="assistant-section section-shell" id="soknadsassistent">
+      <div class="section-heading reveal assistant-heading">
+        <div>
+          <span class="eyebrow">Søknadsassistent</span>
+          <h2>Fra idé til førsteutkast.</h2>
+        </div>
+        <p>Velg søknadstype, fyll inn prosjektet ditt og få et strukturert utkast du kan redigere videre. Alt skjer lokalt i nettleseren.</p>
+      </div>
+
+      <div class="assistant-shell reveal">
+        <form class="assistant-form" id="applicationAssistantForm">
+          <div class="assistant-intro">
+            <span class="assistant-step">01</span>
+            <div><h3>Fortell om prosjektet</h3><p>Du trenger ikke skrive perfekt. Korte stikkord holder.</p></div>
+          </div>
+
+          <div class="form-grid">
+            <label class="field field-wide">
+              <span>Søknadstype</span>
+              <select id="assistantTemplate">
+                <option value="recording">Innspilling og utgivelse</option>
+                <option value="tour">Turné og konserter</option>
+                <option value="stipend">Stipend og kunstnerisk utvikling</option>
+                <option value="equipment">Utstyr, studio og lokaler</option>
+                <option value="organizer">Arrangør, festival og arena</option>
+                <option value="composition">Komposisjon og nytt verk</option>
+                <option value="marketing">Markedsføring og eksport</option>
+                <option value="youth">Barn og unge</option>
+              </select>
+            </label>
+
+            <label class="field field-wide">
+              <span>Ordning du søker på <small>valgfritt</small></span>
+              <select id="assistantGrant"><option value="">Ingen bestemt ordning</option></select>
+            </label>
+
+            <label class="field">
+              <span>Navn på søker</span>
+              <input id="assistantApplicant" type="text" placeholder="Artist, band, selskap eller arena">
+            </label>
+            <label class="field">
+              <span>Prosjektnavn</span>
+              <input id="assistantProject" type="text" placeholder="Arbeidstittel er nok">
+            </label>
+
+            <label class="field field-wide">
+              <span>Hva skal du gjennomføre?</span>
+              <textarea id="assistantIdea" rows="4" placeholder="Beskriv ideen, formatet og det viktigste du skal gjøre."></textarea>
+            </label>
+            <label class="field field-wide">
+              <span>Kunstnerisk mål og hvorfor prosjektet er viktig</span>
+              <textarea id="assistantGoals" rows="3" placeholder="Hva vil du oppnå, utvikle eller tilføre musikklivet?"></textarea>
+            </label>
+            <label class="field">
+              <span>Målgruppe</span>
+              <textarea id="assistantAudience" rows="3" placeholder="Hvem skal oppleve eller bruke resultatet?"></textarea>
+            </label>
+            <label class="field">
+              <span>Plan og tidsrom</span>
+              <textarea id="assistantPlan" rows="3" placeholder="Viktige aktiviteter, datoer og samarbeidspartnere."></textarea>
+            </label>
+            <label class="field">
+              <span>Totalbudsjett</span>
+              <input id="assistantBudget" type="text" inputmode="decimal" placeholder="For eksempel 180 000 kr">
+            </label>
+            <label class="field">
+              <span>Beløp du søker om</span>
+              <input id="assistantFunding" type="text" inputmode="decimal" placeholder="For eksempel 75 000 kr">
+            </label>
+            <label class="field field-wide">
+              <span>Egeninnsats, annen finansiering og forventet effekt</span>
+              <textarea id="assistantImpact" rows="3" placeholder="Nevn egeninnsats, partnere, andre inntekter og hva støtten vil utløse."></textarea>
+            </label>
+          </div>
+
+          <div class="assistant-guidance" id="assistantGuidance" aria-live="polite"></div>
+          <div class="assistant-form-actions">
+            <button class="button button-primary" type="submit">Lag førsteutkast</button>
+            <button class="button button-secondary" type="button" id="assistantReset">Nullstill</button>
+          </div>
+        </form>
+
+        <div class="assistant-result">
+          <div class="assistant-result-header">
+            <div>
+              <span class="assistant-step">02</span>
+              <h3>Utkastet ditt</h3>
+            </div>
+            <span class="local-badge">Lokalt og privat</span>
+          </div>
+          <div class="assistant-document is-empty" id="assistantOutput" tabindex="0" aria-live="polite">
+            <div class="assistant-placeholder">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Z"></path><path d="M14 3v4h4M9 12h6M9 16h6M9 8h2"></path></svg>
+              <h3>Utkastet vises her</h3>
+              <p>Fyll inn feltene til venstre. Assistenten bygger en tydelig prosjektbeskrivelse, begrunnelse, gjennomføringsplan og budsjetttekst.</p>
+            </div>
+          </div>
+          <div class="assistant-result-actions">
+            <button class="button button-ink" type="button" id="assistantCopy" disabled>Kopier tekst</button>
+            <button class="button button-secondary" type="button" id="assistantDownload" disabled>Last ned .txt</button>
+          </div>
+          <p class="fine-print">Utkastet er et skriveverktøy, ikke en garanti for støtte. Tilpass teksten til kriteriene hos den aktuelle støtteaktøren og kontroller alle fakta før innsending.</p>
+        </div>
       </div>
     </section>
 
@@ -204,7 +314,7 @@
       </a>
       <p>En åpen, GitHub-hostet fristoversikt for norsk musikkliv.</p>
     </div>
-    <div class="footer-links"><a href="#oversikt">Finn støtte</a><a href="#slik-fungerer-det">Slik fungerer det</a><a href="data/grants.json" target="_blank" rel="noreferrer">Se kildedata ↗</a></div>
+    <div class="footer-links"><a href="#oversikt">Finn støtte</a><a href="#soknadsassistent">Søknadsassistent</a><a href="#slik-fungerer-det">Slik fungerer det</a><a href="data/grants.json" target="_blank" rel="noreferrer">Se kildedata ↗</a></div>
   </footer>
 
   <dialog id="grantDialog" class="dialog grant-dialog">
