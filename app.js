@@ -23,18 +23,18 @@ const el = id => document.getElementById(id);
 const fmtDate = new Intl.DateTimeFormat('nb-NO', { day: 'numeric', month: 'short', year: 'numeric' });
 const fmtDateTime = new Intl.DateTimeFormat('nb-NO', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 const DAY = 86400000;
-const accents = ['#684cff', '#ff633f', '#56dfb0', '#ffd84d', '#5bc7ff', '#ff70aa'];
+const accents = ['#3157e7', '#111d3d', '#f06a5f', '#805ad5', '#e7a63b', '#5276e9'];
 const categoryIcons = {
-  '': '✦',
-  'Innspilling': '●',
+  '': '•',
+  'Innspilling': '◉',
   'Turné': '↗',
-  'Stipend': '₿',
-  'Konsert': '♫',
-  'Utstyr': '◇',
+  'Stipend': '◇',
+  'Konsert': '♪',
+  'Utstyr': '□',
   'Lokaler': '⌂',
   'Komposisjon': '≈',
-  'Markedsføring': '◎',
-  'Barn og unge': '☺'
+  'Markedsføring': '○',
+  'Barn og unge': '☆'
 };
 
 function escapeHtml(value = '') {

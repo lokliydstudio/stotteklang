@@ -4,8 +4,9 @@ En statisk, mobilvennlig PWA for å finne og følge støtteordninger for musiker
 
 ## Funksjoner
 
-- Urban, lys redesign med redaksjonell typografi, plakatformer og responsiv parallax.
-- Bevegelse respekterer `prefers-reduced-motion` og deaktiveres automatisk ved behov.
+- Lys og ryddig profesjonell profil med Inter-typografi, marineblått, kobolt og varme aksenter.
+- Subtil responsiv parallax som respekterer `prefers-reduced-motion`.
+- Ingen grønne profilfarger.
 
 - Friststatus beregnes automatisk: utløpt, haster, snart, åpen, løpende eller ikke publisert.
 - Søk og filtrering etter formål, søkergruppe og status.
