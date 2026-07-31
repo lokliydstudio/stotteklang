@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f3ea">
+  <meta name="description" content="Finn, filtrer og følg støtteordninger for musikere, lydstudioer, arrangører, festivaler og kulturarenaer.">
+  <title>Støtteklang – finn finansiering til musikken</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#grantGrid">Hopp til støtteordninger</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="Støtteklang forsiden">
+      <svg class="brand-symbol" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="13"></rect>
+        <path d="M11 25.5h4.2V19H11v6.5Zm8.8 6.5H24V12h-4.2v20Zm8.8-4.2h4.2V16.2h-4.2v11.6Z"></path>
+      </svg>
+      <span>Støtteklang</span>
+    </a>
+    <nav class="main-nav" aria-label="Hovedmeny">
+      <a href="#oversikt">Finn støtte</a>
+      <a href="#slik-fungerer-det">Slik fungerer det</a>
+      <a href="#kilder">Kilder</a>
+    </nav>
+    <nav class="header-actions" aria-label="Hovedvalg">
+      <button class="icon-button" id="installButton" hidden aria-label="Installer appen" title="Installer appen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14"></path></svg>
+      </button>
+      <button class="button button-ink" id="settingsButton">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"></path></svg>
+        <span class="button-label">Mine varsler</span>
+        <span class="count-badge" id="followCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <span class="eyebrow"><span class="live-dot"></span> Norges fristoversikt for musikklivet</span>
+        <h1>Mer lyd.<br><span class="highlight-word">Mindre friststress.</span></h1>
+        <p>Finn støtte til innspilling, turné, utstyr, lokaler og prosjekter. Følg akkurat det som passer deg, og få fristene servert før de løper fra deg.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#oversikt">
+            Utforsk støtte
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 17 10-10M8 7h9v9"></path></svg>
+          </a>
+          <button class="button button-paper" id="heroNotifyButton">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"></path></svg>
+            Slå på varsler
+          </button>
+        </div>
+        <div class="hero-proof">
+          <span class="avatar-stack" aria-hidden="true"><i>♫</i><i>●</i><i>↗</i></span>
+          <p><strong id="heroProofCount">0 ordninger</strong> samlet på ett sted</p>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-tilt>
+        <div class="poster-shadow" data-parallax="-0.04"></div>
+        <div class="poster-card" data-parallax="-0.075">
+          <div class="poster-topline"><span>STØTTE / MUSIKK / NORGE</span><span>2026</span></div>
+          <div class="poster-word">SØK</div>
+          <div class="poster-wave" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="poster-word poster-word-outline">SKAP</div>
+          <div class="poster-sticker">33+<small>ordninger</small></div>
+          <svg class="poster-arrow" viewBox="0 0 140 140" aria-hidden="true"><path d="M19 111C48 109 77 93 94 68c8-11 14-24 18-38M76 37l37-8 6 37"></path></svg>
+        </div>
+
+        <div class="deadline-ticket parallax-float" data-parallax="0.105">
+          <div class="ticket-cut ticket-cut-left"></div><div class="ticket-cut ticket-cut-right"></div>
+          <span class="ticket-kicker">NÆRMESTE FRIST</span>
+          <strong id="heroNextDate">–</strong>
+          <small id="heroNextName">Laster …</small>
+          <div class="ticket-barcode" aria-hidden="true"></div>
+        </div>
+
+        <div class="soon-bubble parallax-float" data-parallax="0.055">
+          <span id="heroSoonCount">0</span>
+          <p>utløper<br>snart</p>
+        </div>
+
+        <div class="chrome-disc parallax-float" data-parallax="-0.14" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="spark spark-one parallax-float" data-parallax="0.14" aria-hidden="true">✦</div>
+        <div class="spark spark-two parallax-float" data-parallax="-0.09" aria-hidden="true">✦</div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Typer støtteordninger">
+      <div class="ticker-track">
+        <span>INNSPILLING</span><i>✦</i><span>TURNÉ</span><i>✦</i><span>STIPEND</span><i>✦</i><span>UTSTYR</span><i>✦</i><span>LOKALER</span><i>✦</i><span>FESTIVAL</span><i>✦</i><span>EKSPORT</span><i>✦</i>
+        <span aria-hidden="true">INNSPILLING</span><i aria-hidden="true">✦</i><span aria-hidden="true">TURNÉ</span><i aria-hidden="true">✦</i><span aria-hidden="true">STIPEND</span><i aria-hidden="true">✦</i><span aria-hidden="true">UTSTYR</span><i aria-hidden="true">✦</i><span aria-hidden="true">LOKALER</span><i aria-hidden="true">✦</i><span aria-hidden="true">FESTIVAL</span><i aria-hidden="true">✦</i><span aria-hidden="true">EKSPORT</span><i aria-hidden="true">✦</i>
+      </div>
+    </section>
+
+    <section class="stats-section section-shell reveal" aria-label="Nøkkeltall">
+      <div class="stats-intro">
+        <span class="micro-label">LIVE DATABASE</span>
+        <p>En levende oversikt som sorterer utløpte frister automatisk.</p>
+      </div>
+      <div class="stat-card stat-card-violet"><strong id="totalCount">0</strong><span>ordninger i basen</span><small>og flere legges til</small></div>
+      <div class="stat-card stat-card-orange"><strong id="openCount">0</strong><span>åpne eller løpende</span><small>klare til å utforskes</small></div>
+      <div class="stat-card stat-card-mint"><strong id="providerCount">0</strong><span>støtteaktører</span><small>med offisielle lenker</small></div>
+      <div class="stat-card stat-card-yellow"><strong id="verifiedDate">–</strong><span>sist kildekontrollert</span><small>se alltid originalkilden</small></div>
+    </section>
+
+    <section class="how-section section-shell" id="slik-fungerer-det">
+      <div class="how-heading reveal">
+        <span class="eyebrow">Tre steg. Null kaos.</span>
+        <h2>Fra idé til<br><em>sendt søknad.</em></h2>
+      </div>
+      <div class="how-cards">
+        <article class="how-card how-card-search reveal" data-parallax="-0.018">
+          <div class="how-index">01</div>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="27" cy="27" r="16"></circle><path d="m39 39 15 15M17 27h20M27 17v20"></path></svg>
+          <h3>Finn matchen</h3>
+          <p>Søk på prosjekt, søkergruppe eller friststatus. Du ser raskt hva som faktisk er relevant.</p>
+        </article>
+        <article class="how-card how-card-follow reveal" data-parallax="0.025">
+          <div class="how-index">02</div>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M48 25a16 16 0 0 0-32 0c0 18-8 18-8 24h48c0-6-8-6-8-24ZM26 56h12"></path></svg>
+          <h3>Følg det viktige</h3>
+          <p>Abonner på ordninger eller kategorier. Valgene dine lagres lokalt på enheten.</p>
+        </article>
+        <article class="how-card how-card-go reveal" data-parallax="-0.012">
+          <div class="how-index">03</div>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M11 52 52 11M24 11h28v28"></path></svg>
+          <h3>Søk i tide</h3>
+          <p>Få varsler, legg frister i kalenderen og gå direkte videre til den offisielle søknaden.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="explorer section-shell" id="oversikt">
+      <div class="section-heading reveal">
+        <div>
+          <span class="eyebrow">Støttefinneren</span>
+          <h2>Hva skal du<br><em>få til?</em></h2>
+        </div>
+        <button class="text-button" id="resetFilters">
+          Nullstill filtre
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5M4 4v4.5h4.5"></path></svg>
+        </button>
+      </div>
+
+      <div class="filter-panel reveal">
+        <div class="category-rail" id="categoryRail" aria-label="Filtrer etter formål"></div>
+        <div class="toolbar">
+          <label class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
+            <span class="sr-only">Søk i støtteordninger</span>
+            <input id="searchInput" type="search" placeholder="Søk etter innspilling, turné, studio …" autocomplete="off">
+            <kbd>⌘ K</kbd>
+          </label>
+          <label class="select-wrap">
+            <span class="sr-only">Filtrer etter hvem som søker</span>
+            <select id="applicantFilter" aria-label="Filtrer etter hvem som søker"><option value="">Alle søkere</option></select>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"></path></svg>
+          </label>
+          <label class="select-wrap">
+            <span class="sr-only">Filtrer etter friststatus</span>
+            <select id="statusFilter" aria-label="Filtrer etter friststatus">
+              <option value="active">Aktuelle først</option>
+              <option value="urgent">Utløper innen 7 dager</option>
+              <option value="soon">Utløper innen 30 dager</option>
+              <option value="rolling">Løpende frist</option>
+              <option value="unknown">Frist ikke bestemt</option>
+              <option value="expired">Utløpt</option>
+              <option value="all">Alle statuser</option>
+            </select>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"></path></svg>
+          </label>
+        </div>
+
+        <div class="filter-bottom">
+          <div class="view-tabs" role="tablist" aria-label="Visning">
+            <button class="tab is-active" data-view="all" role="tab" aria-selected="true">Alle</button>
+            <button class="tab" data-view="soon" role="tab" aria-selected="false">Snart frist</button>
+            <button class="tab" data-view="followed" role="tab" aria-selected="false">Følger</button>
+          </div>
+          <div class="results-meta">
+            <p><strong id="resultCount">0</strong> treff</p>
+            <p id="dataFreshness">Laster kildedata …</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grant-grid" id="grantGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span aria-hidden="true">◌</span>
+        <h3>Ingen ordninger matcher</h3>
+        <p>Prøv et annet søkeord eller fjern noen filtre.</p>
+      </div>
+    </section>
+
+    <section class="trust-section section-shell" id="kilder">
+      <div class="trust-poster reveal" data-parallax="-0.025" aria-hidden="true">
+        <span class="trust-ring"></span>
+        <span class="trust-check">✓</span>
+        <strong>OFFISIELLE<br>KILDER</strong>
+        <small>KONTROLLER. SØK. SKAP.</small>
+      </div>
+      <div class="trust-copy reveal">
+        <span class="eyebrow">Kilder og kvalitet</span>
+        <h2>Ingen skjulte<br><em>fasitsvar.</em></h2>
+        <p>Hver oppføring peker til den offisielle støtteaktøren. Friststatus beregnes automatisk fra datoen i databasen, men vilkår kan bli endret av tilskuddsforvalteren.</p>
+        <div class="trust-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Z"></path><path d="M12 9v5m0 3h.01"></path></svg>
+          <p>Kontroller alltid fristen hos originalkilden før du sender søknaden.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#top">
+        <svg class="brand-symbol" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="13"></rect><path d="M11 25.5h4.2V19H11v6.5Zm8.8 6.5H24V12h-4.2v20Zm8.8-4.2h4.2V16.2h-4.2v11.6Z"></path></svg>
+        <span>Støtteklang</span>
+      </a>
+      <p>En åpen, GitHub-hostet fristoversikt for norsk musikkliv.</p>
+    </div>
+    <div class="footer-links"><a href="#oversikt">Finn støtte</a><a href="#slik-fungerer-det">Slik fungerer det</a><a href="data/grants.json" target="_blank" rel="noreferrer">Se kildedata ↗</a></div>
+    <div class="footer-stamp">LAGET FOR<br>NORSK MUSIKKLIV</div>
+  </footer>
+
+  <dialog id="grantDialog" class="dialog grant-dialog">
+    <button class="dialog-close" data-close-dialog aria-label="Lukk">×</button>
+    <div id="grantDialogContent"></div>
+  </dialog>
+
+  <dialog id="settingsDialog" class="dialog settings-dialog">
+    <button class="dialog-close" data-close-dialog aria-label="Lukk">×</button>
+    <span class="eyebrow">Mine varsler</span>
+    <h2>Følg frister som betyr noe</h2>
+    <p>Du kan følge enkeltordninger eller hele kategorier. Valgene lagres lokalt på denne enheten.</p>
+    <div class="settings-block">
+      <div>
+        <h3>Nettleservarsler</h3>
+        <p id="notificationStatus">Ikke aktivert</p>
+      </div>
+      <button class="button button-primary" id="notificationButton">Aktiver</button>
+    </div>
+    <fieldset>
+      <legend>Varsle meg før fristen</legend>
+      <div class="check-grid" id="reminderDays">
+        <label><input type="checkbox" value="30" checked> 30 dager</label>
+        <label><input type="checkbox" value="14" checked> 14 dager</label>
+        <label><input type="checkbox" value="7" checked> 7 dager</label>
+        <label><input type="checkbox" value="1" checked> 1 dag</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Følg kategorier</legend>
+      <div class="check-grid" id="subscriptionCategories"></div>
+    </fieldset>
+    <div class="settings-actions">
+      <button class="button button-ink" id="exportCalendarButton">Eksporter kalender (.ics)</button>
+      <button class="button button-paper" id="testNotificationButton">Send testvarsel</button>
+    </div>
+    <p class="fine-print">På GitHub Pages sjekkes påminnelser når appen åpnes. Kalender-eksport gir de mest pålitelige systemvarslene på iPhone og Android.</p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

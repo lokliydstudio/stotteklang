@@ -1,0 +1,1066 @@
+{
+  "meta": {
+    "title": "Støtteklang",
+    "generatedAt": "2026-07-31T08:23:53.434325Z",
+    "verifiedAt": "2026-07-31",
+    "coverage": "Kurert startoversikt over sentrale nasjonale og utvalgte regionale støtteordninger for norsk musikkliv.",
+    "disclaimer": "Frister og vilkår kan endres. Kontroller alltid den offisielle kilden før innsending."
+  },
+  "grants": [
+    {
+      "id": "kultdir-musikkfestivaler",
+      "name": "Musikkfestivaler",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Tilskudd til musikkfestivaler i Norge som hovedsakelig består av offentlige konserter.",
+      "categories": [
+        "Festival",
+        "Konsert",
+        "Arrangør"
+      ],
+      "applicantTypes": [
+        "Festival",
+        "Arrangør",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-08-18T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "applyUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "verifiedAt": "2026-07-31",
+      "featured": true
+    },
+    {
+      "id": "kultdir-internasjonalt-baerekraftprogram",
+      "name": "Musikk og scenekunst – internasjonalt bærekraftprogram",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Program for mer klimavennlig og inkluderende turnévirksomhet og samproduksjon mellom Norge, Danmark og England.",
+      "categories": [
+        "Turné",
+        "Eksport",
+        "Kompetanse"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Arrangør",
+        "Organisasjon/forening"
+      ],
+      "region": "Internasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-01T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/fag/musikk",
+      "applyUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "statens-kunstnerstipend",
+      "name": "Statens kunstnerstipend",
+      "provider": "Kulturdirektoratet",
+      "summary": "Stipendordninger for profesjonelle kunstnere, blant annet arbeidsstipend og diversestipend for musikere og komponister.",
+      "categories": [
+        "Stipend",
+        "Produksjon",
+        "Komposisjon"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Komponist/låtskriver",
+        "Tekstforfatter"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "openFrom": "2026-08-01T08:00:00+02:00",
+      "deadlines": [
+        "2026-09-01T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/statens-kunstnerstipend",
+      "applyUrl": "https://www.kulturdirektoratet.no/statens-kunstnerstipend",
+      "verifiedAt": "2026-07-31",
+      "featured": true
+    },
+    {
+      "id": "fond-lyd-bilde-musikk",
+      "name": "Fond for lyd og bilde – Musikk",
+      "provider": "Fond for lyd og bilde / Kulturdirektoratet",
+      "summary": "Produksjon og formidling av lydopptak og profesjonelle lydprosjekter.",
+      "categories": [
+        "Innspilling",
+        "Produksjon",
+        "Utgivelse"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Selskap",
+        "Lydstudio"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "openFrom": "2026-08-03T08:00:00+02:00",
+      "deadlines": [
+        "2026-09-03T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/fond-for-lyd-og-bilde",
+      "applyUrl": "https://www.kulturdirektoratet.no/fond-for-lyd-og-bilde",
+      "verifiedAt": "2026-07-31",
+      "featured": true
+    },
+    {
+      "id": "fond-lyd-bilde-markedsforing",
+      "name": "Fond for lyd og bilde – Markedsføring",
+      "provider": "Fond for lyd og bilde / Kulturdirektoratet",
+      "summary": "Markedsføring og synliggjøring av ferdigstilte musikk-, scene- og filmprosjekter.",
+      "categories": [
+        "Markedsføring",
+        "Utgivelse"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Selskap",
+        "Arrangør"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "openFrom": "2026-08-03T08:00:00+02:00",
+      "deadlines": [
+        "2026-09-03T13:00:00+02:00",
+        "2026-11-05T13:00:00+01:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/fond-for-lyd-og-bilde",
+      "applyUrl": "https://www.kulturdirektoratet.no/fond-for-lyd-og-bilde",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "kultdir-andre-musikkprosjekter",
+      "name": "Musikk – andre musikkprosjekter og -virksomheter",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Prosjekter og virksomheter som ikke omfattes av andre musikkordninger.",
+      "categories": [
+        "Produksjon",
+        "Kompetanse",
+        "Konsert"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Arrangør",
+        "Organisasjon/forening",
+        "Selskap"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-15T13:00:00+02:00",
+        "2027-01-15T13:00:00+01:00",
+        "2027-09-15T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger/andre-musikktiltak-prosjekttilskudd-og-virksomhetstilskudd",
+      "applyUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger/andre-musikktiltak-prosjekttilskudd-og-virksomhetstilskudd",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "kultdir-konserter-turneer",
+      "name": "Musikk – konserter og turneer",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Prosjekt- og virksomhetstilskudd til konsert- og turnévirksomhet i inn- og utland.",
+      "categories": [
+        "Konsert",
+        "Turné",
+        "Arrangør"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Arrangør",
+        "Selskap"
+      ],
+      "region": "Nasjonal / internasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-15T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "applyUrl": "https://www.kulturdirektoratet.no/utlysninger/nkf-mme-15-sep-2026",
+      "verifiedAt": "2026-07-31",
+      "featured": true
+    },
+    {
+      "id": "kultdir-komposisjon-produksjon",
+      "name": "Musikk – komposisjon og produksjon",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Tilskudd til komposisjon og skapende produksjon i alle musikksjangre.",
+      "categories": [
+        "Komposisjon",
+        "Produksjon"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver",
+        "Musiker/artist",
+        "Band/ensemble",
+        "Selskap"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "openFrom": "2026-08-15T08:00:00+02:00",
+      "deadlines": [
+        "2026-09-15T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "applyUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "kultdir-konsertarrangorer",
+      "name": "Musikk – konsertarrangører",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Tilskudd til å arrangere konserter i Norge og Sápmi.",
+      "categories": [
+        "Arrangør",
+        "Konsert"
+      ],
+      "applicantTypes": [
+        "Arrangør",
+        "Kulturarena",
+        "Organisasjon/forening",
+        "Selskap"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "openFrom": "2026-08-15T08:00:00+02:00",
+      "deadlines": [
+        "2026-09-15T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "applyUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "kultdir-arena",
+      "name": "Bygg og infrastruktur – ARENA",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Nybygg, ombygging, oppgradering, forprosjekter og utprøvingsprosjekter for kunst- og kulturbygg.",
+      "categories": [
+        "Bygg",
+        "Lokaler",
+        "Kulturarena"
+      ],
+      "applicantTypes": [
+        "Kulturarena",
+        "Arrangør",
+        "Organisasjon/forening",
+        "Selskap"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "openFrom": "2026-08-15T08:00:00+02:00",
+      "deadlines": [
+        "2026-09-15T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "applyUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "kultdir-saerskilte-innspillingsprosjekter",
+      "name": "Musikk – særskilte innspillingsprosjekter",
+      "provider": "Kulturdirektoratet / Kulturrådet",
+      "summary": "Innspilling og utgivelse av musikk med særskilt støttebehov eller musikkhistorisk dokumentasjonsverdi.",
+      "categories": [
+        "Innspilling",
+        "Utgivelse"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Selskap",
+        "Lydstudio"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "announced_later",
+      "deadlines": [],
+      "deadlineNote": "Neste søknadsfrist er ikke bestemt.",
+      "sourceUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger/fonograminnspillinger",
+      "applyUrl": "https://www.kulturdirektoratet.no/tilskuddsordninger/fonograminnspillinger",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "ffuk-alle-stotteordninger",
+      "name": "FFUK – konserter, innspilling og prosjektstøtte",
+      "provider": "Fond for utøvende kunstnere (FFUK)",
+      "summary": "Flere støtteordninger for utøvende kunstnere og produksjoner, med felles søknadsrunder.",
+      "categories": [
+        "Konsert",
+        "Innspilling",
+        "Produksjon",
+        "Turné"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Arrangør",
+        "Selskap"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-08-18T13:00:00+02:00",
+        "2026-11-03T13:00:00+01:00"
+      ],
+      "sourceUrl": "https://www.ffuk.no/soeknadsfrister-og-offentliggjoering-av-vedtak.391072.no.html",
+      "applyUrl": "https://www.ffuk.no/",
+      "verifiedAt": "2026-07-31",
+      "featured": true
+    },
+    {
+      "id": "ffuk-utoverstipend",
+      "name": "FFUK Utøverstipend",
+      "provider": "Fond for utøvende kunstnere (FFUK)",
+      "summary": "Personlig stipend for profesjonelle utøvende kunstnere.",
+      "categories": [
+        "Stipend"
+      ],
+      "applicantTypes": [
+        "Musiker/artist"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-01T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.ffuk.no/soeknadsfrister-og-offentliggjoering-av-vedtak.391072.no.html",
+      "applyUrl": "https://www.ffuk.no/",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "kulturrom-teknisk-utstyr",
+      "name": "Kulturrom – teknisk utstyr",
+      "provider": "Kulturrom",
+      "summary": "Tilskudd til lyd-, lys-, scene- og annet teknisk utstyr for øving og framføring.",
+      "categories": [
+        "Utstyr",
+        "Konsert",
+        "Lokaler"
+      ],
+      "applicantTypes": [
+        "Kulturarena",
+        "Arrangør",
+        "Lydstudio",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-03-01T23:59:00+01:00",
+        "2026-09-01T23:59:00+02:00",
+        "2027-03-01T23:59:00+01:00",
+        "2027-09-01T23:59:00+02:00",
+        "2028-03-01T23:59:00+01:00",
+        "2028-09-01T23:59:00+02:00"
+      ],
+      "sourceUrl": "https://kulturrom.no/",
+      "applyUrl": "https://kulturrom.no/",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 3,
+            "day": 1,
+            "time": "23:59"
+          },
+          {
+            "month": 9,
+            "day": 1,
+            "time": "23:59"
+          }
+        ],
+        "horizonYears": 2
+      },
+      "featured": true
+    },
+    {
+      "id": "kulturrom-lokaler",
+      "name": "Kulturrom – lokaler, bygg og akustikk",
+      "provider": "Kulturrom",
+      "summary": "Etablering og oppgradering av scener, øvingsrom, akustikk og kulturarenaer.",
+      "categories": [
+        "Lokaler",
+        "Bygg",
+        "Kulturarena"
+      ],
+      "applicantTypes": [
+        "Kulturarena",
+        "Arrangør",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-03-01T23:59:00+01:00",
+        "2026-09-01T23:59:00+02:00",
+        "2027-03-01T23:59:00+01:00",
+        "2027-09-01T23:59:00+02:00",
+        "2028-03-01T23:59:00+01:00",
+        "2028-09-01T23:59:00+02:00"
+      ],
+      "sourceUrl": "https://kulturrom.no/tilskuddsomraader/bedre-lokaler-over/",
+      "applyUrl": "https://kulturrom.no/",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 3,
+            "day": 1,
+            "time": "23:59"
+          },
+          {
+            "month": 9,
+            "day": 1,
+            "time": "23:59"
+          }
+        ],
+        "horizonYears": 2
+      }
+    },
+    {
+      "id": "music-norway-reise",
+      "name": "Music Norway – Reisetilskudd",
+      "provider": "Music Norway",
+      "summary": "Reise, overnatting og visum ved internasjonale konserter, turneer, låtskriving og komponering.",
+      "categories": [
+        "Turné",
+        "Eksport",
+        "Konsert"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Komponist/låtskriver",
+        "Selskap"
+      ],
+      "region": "Internasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-03-01T14:00:00+01:00",
+        "2026-06-01T14:00:00+02:00",
+        "2026-09-01T14:00:00+02:00",
+        "2026-12-01T14:00:00+01:00",
+        "2027-03-01T14:00:00+01:00",
+        "2027-06-01T14:00:00+02:00",
+        "2027-09-01T14:00:00+02:00",
+        "2027-12-01T14:00:00+01:00",
+        "2028-03-01T14:00:00+01:00",
+        "2028-06-01T14:00:00+02:00",
+        "2028-09-01T14:00:00+02:00",
+        "2028-12-01T14:00:00+01:00"
+      ],
+      "sourceUrl": "https://musicnorway.no/tilskudd/reisetilskudd",
+      "applyUrl": "https://musicnorway.no/tilskudd/reisetilskudd",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 3,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 6,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 9,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 12,
+            "day": 1,
+            "time": "14:00"
+          }
+        ],
+        "horizonYears": 2
+      },
+      "featured": true
+    },
+    {
+      "id": "music-norway-markedsforing",
+      "name": "Music Norway – Markedsføringstilskudd",
+      "provider": "Music Norway",
+      "summary": "Internasjonal markedsføring av norske artister, opphavere og musikkselskaper.",
+      "categories": [
+        "Markedsføring",
+        "Eksport",
+        "Utgivelse"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Komponist/låtskriver",
+        "Selskap"
+      ],
+      "region": "Internasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-03-01T14:00:00+01:00",
+        "2026-06-01T14:00:00+02:00",
+        "2026-09-01T14:00:00+02:00",
+        "2026-12-01T14:00:00+01:00",
+        "2027-03-01T14:00:00+01:00",
+        "2027-06-01T14:00:00+02:00",
+        "2027-09-01T14:00:00+02:00",
+        "2027-12-01T14:00:00+01:00",
+        "2028-03-01T14:00:00+01:00",
+        "2028-06-01T14:00:00+02:00",
+        "2028-09-01T14:00:00+02:00",
+        "2028-12-01T14:00:00+01:00"
+      ],
+      "sourceUrl": "https://musicnorway.no/tilskudd/markedsf%C3%B8ringstilskudd-2",
+      "applyUrl": "https://musicnorway.no/tilskudd/markedsf%C3%B8ringstilskudd-2",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 3,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 6,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 9,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 12,
+            "day": 1,
+            "time": "14:00"
+          }
+        ],
+        "horizonYears": 2
+      }
+    },
+    {
+      "id": "music-norway-arrangor",
+      "name": "Music Norway – Arrangørtilskudd",
+      "provider": "Music Norway",
+      "summary": "Arrangementer i Norge som styrker norsk musikkbransje internasjonalt.",
+      "categories": [
+        "Arrangør",
+        "Eksport",
+        "Konsert"
+      ],
+      "applicantTypes": [
+        "Arrangør",
+        "Festival",
+        "Selskap",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal / internasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-03-01T14:00:00+01:00",
+        "2026-06-01T14:00:00+02:00",
+        "2026-09-01T14:00:00+02:00",
+        "2026-12-01T14:00:00+01:00",
+        "2027-03-01T14:00:00+01:00",
+        "2027-06-01T14:00:00+02:00",
+        "2027-09-01T14:00:00+02:00",
+        "2027-12-01T14:00:00+01:00",
+        "2028-03-01T14:00:00+01:00",
+        "2028-06-01T14:00:00+02:00",
+        "2028-09-01T14:00:00+02:00",
+        "2028-12-01T14:00:00+01:00"
+      ],
+      "sourceUrl": "https://musicnorway.no/tilskudd/arrang%C3%B8rtilskudd",
+      "applyUrl": "https://musicnorway.no/tilskudd/arrang%C3%B8rtilskudd",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 3,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 6,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 9,
+            "day": 1,
+            "time": "14:00"
+          },
+          {
+            "month": 12,
+            "day": 1,
+            "time": "14:00"
+          }
+        ],
+        "horizonYears": 2
+      }
+    },
+    {
+      "id": "music-norway-motevirksomhet",
+      "name": "Music Norway – Møtevirksomhet",
+      "provider": "Music Norway",
+      "summary": "Tilskudd knyttet til internasjonal møtevirksomhet og bransjebygging.",
+      "categories": [
+        "Eksport",
+        "Kompetanse",
+        "Nettverk"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Komponist/låtskriver",
+        "Selskap"
+      ],
+      "region": "Internasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-08-15T14:00:00+02:00",
+        "2026-09-15T14:00:00+02:00",
+        "2026-10-15T14:00:00+02:00",
+        "2026-11-15T14:00:00+01:00",
+        "2026-12-15T14:00:00+01:00"
+      ],
+      "sourceUrl": "https://musicnorway.no/tema/tilskudd",
+      "applyUrl": "https://musicnorway.no/tema/tilskudd",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "nopa-sakorn",
+      "name": "NOPAs såkornmidler",
+      "provider": "NOPA",
+      "summary": "Støtte til skapende arbeid for komponister og tekstforfattere.",
+      "categories": [
+        "Komposisjon",
+        "Stipend",
+        "Produksjon"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver",
+        "Tekstforfatter"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-03-15T13:00:00+01:00",
+        "2026-10-01T13:00:00+02:00",
+        "2027-03-15T13:00:00+01:00",
+        "2027-10-01T13:00:00+02:00",
+        "2028-03-15T13:00:00+01:00",
+        "2028-10-01T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://nopa.no/sok-tilskudd/",
+      "applyUrl": "https://nopa.no/sok-tilskudd/",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 3,
+            "day": 15,
+            "time": "13:00"
+          },
+          {
+            "month": 10,
+            "day": 1,
+            "time": "13:00"
+          }
+        ],
+        "horizonYears": 2
+      }
+    },
+    {
+      "id": "nopa-prosjekttilskudd",
+      "name": "NOPAs prosjekttilskudd",
+      "provider": "NOPA",
+      "summary": "Prosjekter som skaper ny musikk og sangtekst, som låtskrivercamper, workshops og kurs.",
+      "categories": [
+        "Komposisjon",
+        "Kompetanse",
+        "Produksjon"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver",
+        "Tekstforfatter",
+        "Arrangør",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-15T13:00:00+02:00",
+        "2027-02-18T13:00:00+01:00"
+      ],
+      "sourceUrl": "https://nopa.no/kalender/sok-om-prosjekttilskudd/",
+      "applyUrl": "https://nopa.no/kalender/sok-om-prosjekttilskudd/",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "nopa-unge-talenter",
+      "name": "NOPAs tilskudd til unge talenter",
+      "provider": "NOPA",
+      "summary": "Personlig tilskudd til unge TONO-medlemmer som skaper ny musikk eller tekst.",
+      "categories": [
+        "Stipend",
+        "Komposisjon",
+        "Barn og unge"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver",
+        "Tekstforfatter",
+        "Musiker/artist"
+      ],
+      "region": "Nasjonal",
+      "amount": "20 000 kr",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-10-01T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://nopa.no/nopas-tilskudd-for-unge-talenter/",
+      "applyUrl": "https://nopa.no/nopas-tilskudd-for-unge-talenter/",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "nkf-sakorn",
+      "name": "Norsk Komponistforening – Såkornmidler",
+      "provider": "Norsk Komponistforening",
+      "summary": "Tidlig fase i prosjekter og kunstnerisk utviklingsarbeid for komponister.",
+      "categories": [
+        "Komposisjon",
+        "Produksjon",
+        "Stipend"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-02T13:00:00+02:00",
+        "2027-02-03T13:00:00+01:00",
+        "2027-09-02T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://komponist.no/tilskuddsordninger/sakornmidler",
+      "applyUrl": "https://komponist.no/tilskuddsordninger/sakornmidler",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "nkf-innspilling-utgivelse",
+      "name": "Norsk Komponistforening – innspilling og utgivelse",
+      "provider": "Norsk Komponistforening",
+      "summary": "Tilskudd til innspilling og utgivelse av musikk av nålevende, aktive komponister.",
+      "categories": [
+        "Innspilling",
+        "Utgivelse",
+        "Komposisjon"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver",
+        "Musiker/artist",
+        "Band/ensemble",
+        "Selskap",
+        "Lydstudio"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-10-02T13:00:00+02:00",
+        "2027-03-02T13:00:00+01:00",
+        "2027-10-02T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://komponist.no/tilskuddsordninger/stotte-til-innspilling-og-utgivelse",
+      "applyUrl": "https://komponist.no/tilskuddsordninger/stotte-til-innspilling-og-utgivelse",
+      "verifiedAt": "2026-07-31",
+      "featured": true
+    },
+    {
+      "id": "komponistenes-vederlagsfond",
+      "name": "Komponistenes vederlagsfond",
+      "provider": "Musikkfondene",
+      "summary": "Arbeids-, reise-, utstyrs- og fordypningsstipend for aktive komponister og låtskrivere.",
+      "categories": [
+        "Stipend",
+        "Komposisjon",
+        "Utstyr",
+        "Reise"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-02T13:00:00+02:00",
+        "2027-02-02T13:00:00+01:00",
+        "2027-09-02T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.musikkfondene.no/fondene/komponistenes-vederlagsfond/sokerveiledning/",
+      "applyUrl": "https://www.musikkfondene.no/",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "det-norske-komponistfond",
+      "name": "Det norske komponistfond",
+      "provider": "Musikkfondene",
+      "summary": "Støtte til komponisthonorar for å skape ny musikk som skal framføres offentlig.",
+      "categories": [
+        "Komposisjon",
+        "Produksjon"
+      ],
+      "applicantTypes": [
+        "Komponist/låtskriver",
+        "Arrangør",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-10-02T13:00:00+02:00",
+        "2027-03-02T13:00:00+01:00",
+        "2027-10-02T13:00:00+02:00"
+      ],
+      "sourceUrl": "https://www.musikkfondene.no/fondene/det-norske-komponistfond/sokerveiledning/",
+      "applyUrl": "https://www.musikkfondene.no/",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "tekstforfatterfondet",
+      "name": "Tekstforfatterfondet",
+      "provider": "Musikkfondene",
+      "summary": "Arbeids-, fordypnings- og reisestipend for aktive tekstforfattere som skriver tekst til musikk.",
+      "categories": [
+        "Stipend",
+        "Komposisjon",
+        "Reise"
+      ],
+      "applicantTypes": [
+        "Tekstforfatter"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-11-02T13:00:00+01:00",
+        "2027-04-02T13:00:00+02:00",
+        "2027-11-02T13:00:00+01:00"
+      ],
+      "sourceUrl": "https://www.musikkfondene.no/fondene/tekstforfatterfondet/stotteordning/",
+      "applyUrl": "https://www.musikkfondene.no/",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "frifond-musikk",
+      "name": "Frifond musikk",
+      "provider": "Norsk musikkråd / Frifond",
+      "summary": "Utstyr, innspilling og større lokale musikkprosjekter for frittstående grupper med unge deltakere.",
+      "categories": [
+        "Barn og unge",
+        "Frivillighet",
+        "Innspilling",
+        "Utstyr",
+        "Festival"
+      ],
+      "applicantTypes": [
+        "Band/ensemble",
+        "Organisasjon/forening"
+      ],
+      "region": "Nasjonal / lokal",
+      "amount": "Opptil 40 000 kr",
+      "deadlineType": "rolling",
+      "deadlines": [],
+      "deadlineNote": "Løpende behandling – søk før prosjektet starter.",
+      "sourceUrl": "https://www.musikk.no/nmr/frifond-musikk",
+      "applyUrl": "https://frifond.no/retningslinjer/retningslinjer-musikk",
+      "verifiedAt": "2026-07-31",
+      "featured": true
+    },
+    {
+      "id": "nmr-rekruttering-korps-orkester",
+      "name": "Rekruttering og deltakelse – korps og orkester",
+      "provider": "Norsk musikkråd",
+      "summary": "Tiltak som øker deltakelsen blant barn og unge i instrumentalensembler.",
+      "categories": [
+        "Barn og unge",
+        "Frivillighet",
+        "Rekruttering"
+      ],
+      "applicantTypes": [
+        "Organisasjon/forening",
+        "Band/ensemble"
+      ],
+      "region": "Nasjonal",
+      "deadlineType": "announced_later",
+      "deadlines": [],
+      "deadlineNote": "Utlyses i midten av september 2026; frist ventes tidlig i november.",
+      "sourceUrl": "https://www.musikk.no/nmr/tilskuddsordninger/rekruttering-og-deltakelse-i-korps-og-orkester",
+      "applyUrl": "https://www.musikk.no/nmr/tilskuddsordninger/rekruttering-og-deltakelse-i-korps-og-orkester",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "regionale-kulturfond",
+      "name": "Regionale kulturfond",
+      "provider": "Fylkeskommunene",
+      "summary": "Regionale midler for aktivitet, deltakelse og samarbeid mellom profesjonelt og frivillig kulturliv.",
+      "categories": [
+        "Regional",
+        "Frivillighet",
+        "Produksjon",
+        "Konsert"
+      ],
+      "applicantTypes": [
+        "Musiker/artist",
+        "Band/ensemble",
+        "Arrangør",
+        "Organisasjon/forening",
+        "Kulturarena"
+      ],
+      "region": "Regional",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-09-01T23:59:00+02:00",
+        "2026-11-01T23:59:00+01:00",
+        "2026-11-02T23:59:00+01:00",
+        "2026-12-01T23:59:00+01:00"
+      ],
+      "deadlineNote": "Frister varierer etter fylke. Se offisiell fylkesoversikt.",
+      "sourceUrl": "https://www.musikk.no/nmr/tilskuddsordninger/regionale-kulturfond",
+      "applyUrl": "https://www.musikk.no/nmr/tilskuddsordninger/regionale-kulturfond",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "sparebankstiftelsen-smabelop",
+      "name": "Sparebankstiftelsen DNB – støtte inntil 50 000 kr",
+      "provider": "Sparebankstiftelsen DNB",
+      "summary": "Løpende støtte til lokale tiltak, inkludert kunst, kultur, korps, kor, orkestre og utstyr.",
+      "categories": [
+        "Frivillighet",
+        "Utstyr",
+        "Konsert",
+        "Barn og unge"
+      ],
+      "applicantTypes": [
+        "Organisasjon/forening",
+        "Arrangør",
+        "Kulturarena"
+      ],
+      "region": "Østlandet",
+      "amount": "Inntil 50 000 kr",
+      "deadlineType": "rolling",
+      "deadlines": [],
+      "deadlineNote": "Løpende søknadsfrist.",
+      "sourceUrl": "https://sparebankstiftelsen.no/sok-stotte/",
+      "applyUrl": "https://sparebankstiftelsen.no/sok-stotte/",
+      "verifiedAt": "2026-07-31"
+    },
+    {
+      "id": "sparebankstiftelsen-storebelop",
+      "name": "Sparebankstiftelsen DNB – støtte over 50 000 kr",
+      "provider": "Sparebankstiftelsen DNB",
+      "summary": "Større støtte til allmennyttige kunst- og kulturtiltak i stiftelsens geografiske område.",
+      "categories": [
+        "Frivillighet",
+        "Utstyr",
+        "Lokaler",
+        "Konsert"
+      ],
+      "applicantTypes": [
+        "Organisasjon/forening",
+        "Arrangør",
+        "Kulturarena"
+      ],
+      "region": "Østlandet",
+      "amount": "Over 50 000 kr",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-02-01T23:59:00+01:00",
+        "2026-09-01T23:59:00+02:00",
+        "2027-02-01T23:59:00+01:00",
+        "2027-09-01T23:59:00+02:00",
+        "2028-02-01T23:59:00+01:00",
+        "2028-09-01T23:59:00+02:00"
+      ],
+      "sourceUrl": "https://sparebankstiftelsen.no/sok-stotte/",
+      "applyUrl": "https://sparebankstiftelsen.no/sok-stotte/",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 2,
+            "day": 1,
+            "time": "23:59"
+          },
+          {
+            "month": 9,
+            "day": 1,
+            "time": "23:59"
+          }
+        ],
+        "horizonYears": 2
+      }
+    },
+    {
+      "id": "oslo-konsertstotte",
+      "name": "Konsertstøtte – Oslo musikkråd",
+      "provider": "Oslo musikkråd / Oslo kommune",
+      "summary": "Støtte til ideelle og frivillige musikkgrupper som arrangerer egne konserter i Oslo.",
+      "categories": [
+        "Konsert",
+        "Arrangør",
+        "Frivillighet"
+      ],
+      "applicantTypes": [
+        "Band/ensemble",
+        "Organisasjon/forening",
+        "Arrangør"
+      ],
+      "region": "Oslo",
+      "deadlineType": "fixed",
+      "deadlines": [
+        "2026-01-15T23:59:00+01:00",
+        "2026-08-15T23:59:00+02:00",
+        "2027-01-15T23:59:00+01:00",
+        "2027-08-15T23:59:00+02:00",
+        "2028-01-15T23:59:00+01:00",
+        "2028-08-15T23:59:00+02:00"
+      ],
+      "sourceUrl": "https://www.musikk.no/oslo/tilskudd/konsertstotte",
+      "applyUrl": "https://www.musikk.no/oslo/tilskudd/konsertstotte",
+      "verifiedAt": "2026-07-31",
+      "recurrence": {
+        "type": "annual_dates",
+        "dates": [
+          {
+            "month": 1,
+            "day": 15,
+            "time": "23:59"
+          },
+          {
+            "month": 8,
+            "day": 15,
+            "time": "23:59"
+          }
+        ],
+        "horizonYears": 2
+      }
+    }
+  ]
+}
