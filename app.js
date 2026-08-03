@@ -448,16 +448,31 @@ function resetAssistant() {
   showToast('Søknadsassistenten er nullstilt');
 }
 
+function openAssistantDialog({ grantId = '', focusField = true } = {}) {
+  const dialog = el('assistantDialog');
+  if (!dialog) return;
+
+  if (grantId) {
+    const grant = state.grants.find(item => item.id === grantId);
+    if (grant) {
+      el('assistantGrant').value = grant.id;
+      el('assistantTemplate').value = inferTemplateFromGrant(grant);
+      updateAssistantGuidance();
+      saveAssistantDraft();
+    }
+  }
+
+  if (!dialog.open) dialog.showModal();
+  if (focusField) {
+    window.setTimeout(() => el('assistantApplicant')?.focus(), 120);
+  }
+}
+
 function startApplicationForGrant(grantId) {
   const grant = state.grants.find(item => item.id === grantId);
   if (!grant) return;
-  el('assistantGrant').value = grant.id;
-  el('assistantTemplate').value = inferTemplateFromGrant(grant);
-  updateAssistantGuidance();
-  saveAssistantDraft();
-  el('grantDialog').close();
-  document.querySelector('#soknadsassistent').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  window.setTimeout(() => el('assistantApplicant').focus(), 500);
+  if (el('grantDialog')?.open) el('grantDialog').close();
+  openAssistantDialog({ grantId: grant.id });
 }
 
 function persistSubscriptions() {
@@ -623,8 +638,12 @@ function bindEvents() {
   }));
   el('settingsButton').addEventListener('click', () => el('settingsDialog').showModal());
   el('heroNotifyButton').addEventListener('click', () => el('settingsDialog').showModal());
+  el('assistantOpenButton')?.addEventListener('click', () => openAssistantDialog());
+  el('footerAssistantButton')?.addEventListener('click', () => openAssistantDialog());
   document.querySelectorAll('[data-close-dialog]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
-  document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); }));
+  document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  }));
   el('notificationButton').addEventListener('click', requestNotifications);
   el('testNotificationButton').addEventListener('click', () => sendNotification('Test fra Støtteklang', 'Varslene fungerer på denne enheten.'));
   el('exportCalendarButton').addEventListener('click', exportCalendar);

@@ -82,3 +82,7 @@ MIT – bruk og tilpass fritt. Kontroller alltid støttefristene hos offisiell k
 ## Visuelt uttrykk
 
 Forsiden bruker den urbane plakatprofilen med Archivo/Inter, off-white rutenett, lilla, korall, gult og blått. Søknadsassistenten åpnes i en dialog, slik at den opprinnelige forsidelayouten ikke endres. Teksten i plakatgrafikken er «Søk og Skap».
+
+## Rettelse: søknadsassistent
+
+Versjon 6.0.1 retter åpning av søknadsassistenten fra hovedknappen, footeren og detaljvisningen til en støtteordning. Dialoginnholdet vises nå umiddelbart, og valgt støtteordning overføres automatisk til riktig mal.
