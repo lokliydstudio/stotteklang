@@ -14,8 +14,10 @@ En statisk, mobilvennlig PWA for å finne og følge støtteordninger for musiker
 - Nettleservarsler ved åpning/bakgrunnssynk der nettleseren støtter det.
 - Kalender-eksport (`.ics`) for pålitelige systemvarsler på mobil.
 - Installerbar PWA med offline-cache.
-- Innebygd søknadsassistent med åtte målrettede maler for innspilling, turné, stipend, utstyr/lokaler, arrangører, komposisjon, markedsføring/eksport og barn/unge.
-- Redigerbart førsteutkast som kan kopieres eller lastes ned som tekst. Utkast og skjemadata behandles og lagres lokalt i nettleseren.
+- Integrert støttebot for Loki Lydstudio AS med studioprofil, prosjektdata og automatisk rangering av aktive støtteordninger.
+- Redigerbart lokalt førsteutkast, kvalifikasjonskontroll, mangelliste, tekstnedlasting og komplett JSON-søknadspakke.
+- Menneskelig godkjenningsport før teksten kopieres og den offisielle søknadsportalen åpnes.
+- Valgfri Cloudflare Worker for AI-utkast og Gmail-utkast/-sending; API-nøkler ligger aldri i GitHub Pages.
 - Daglig GitHub Action som ruller frem gjentakende årlige frister og validerer data.
 
 ## Publiser på GitHub Pages
@@ -52,11 +54,11 @@ Selve nettsiden beregner status fra dagens dato, så en frist flyttes automatisk
 
 Engangsfrister, lokale ordninger, regelendringer og nye utlysninger må fortsatt kildekontrolleres og legges inn. En helt uttømmende nasjonal database krever redaksjonelt ansvar eller egne integrasjoner mot hver støtteaktør.
 
-## Søknadsassistent og eventuell AI
+## Støttebot og valgfri AI
 
-Søknadsassistenten bruker målrettede, lokale maler og krever ingen konto, API-nøkkel eller backend. Den lager et strukturert førsteutkast basert på brukerens egne opplysninger og den valgte støtteordningen.
+Støtteboten fungerer lokalt uten konto eller backend. Den rangerer aktive ordninger, lager et strukturert førsteutkast, markerer manglende informasjon og krever godkjenning før portal eller e-postintegrasjon åpnes.
 
-En ekte generativ AI-tjeneste kan kobles til senere, men API-nøkler må aldri legges direkte i JavaScript på GitHub Pages. Bruk i så fall en sikker serverless funksjon eller egen backend som mellomledd.
+Mappen `worker/` inneholder en valgfri Cloudflare Worker for generative utkast og Gmail-utkast/-sending. Frontend konfigureres i `bot-config.js`; hemmelige API- og OAuth-nøkler skal bare lagres som Worker-hemmeligheter. Se `docs/STOTTEBOT.md`.
 
 ## Varsler og GitHub Pages
 
@@ -86,3 +88,8 @@ Forsiden bruker den urbane plakatprofilen med Archivo/Inter, off-white rutenett,
 ## Rettelse: søknadsassistent
 
 Versjon 6.0.1 retter åpning av søknadsassistenten fra hovedknappen, footeren og detaljvisningen til en støtteordning. Dialoginnholdet vises nå umiddelbart, og valgt støtteordning overføres automatisk til riktig mal.
+
+
+## Støttebot
+
+Støtteboten er implementert i hovedgrensesnittet. Lokal modus fungerer uten backend. Se `docs/STOTTEBOT.md` for sikker AI- og Gmail-konfigurasjon.

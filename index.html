@@ -107,7 +107,7 @@
 </div>
 </section>
 
-<section class="assistant-launch section-shell reveal" id="soknadsassistent"><div><span class="eyebrow">Søknadsassistent</span><h2>Kom raskere i gang med søknaden.</h2><p>Bruk målrettede maler for innspilling, turné, stipend, utstyr, festival og flere søknadstyper.</p></div><button class="button button-ink" id="assistantOpenButton">Åpne søknadsassistent <span aria-hidden="true">↗</span></button></section><section class="explorer section-shell" id="oversikt">
+<section class="assistant-launch section-shell reveal" id="soknadsassistent"><div><span class="eyebrow">Søknadsassistent</span><h2>Finn ordningen og bygg søknaden.</h2><p>Ranger aktuelle støtteordninger for Loki Lydstudio AS, lag et kontrollert utkast og klargjør innsending.</p></div><button class="button button-ink" id="assistantOpenButton">Åpne søknadsassistent <span aria-hidden="true">↗</span></button></section><section class="explorer section-shell" id="oversikt">
 <div class="section-heading reveal">
 <div>
 <span class="eyebrow">Støttefinneren</span>
@@ -222,15 +222,62 @@
 <p class="fine-print">På GitHub Pages sjekkes påminnelser når appen åpnes. Kalender-eksport gir de mest pålitelige systemvarslene på iPhone og Android.</p>
 </dialog>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script src="bot-config.js"></script>
 <script defer="" src="app.js"></script>
-<dialog class="dialog assistant-dialog" id="assistantDialog"><button aria-label="Lukk" class="dialog-close" data-close-dialog="">×</button><div class="assistant-modal-head"><span class="eyebrow">Søknadsassistent</span><h2>Fra idé til førsteutkast.</h2><p>Velg søknadstype, fyll inn prosjektet ditt og få en strukturert tekst du kan redigere videre. Alt skjer lokalt i nettleseren.</p></div><div class="assistant-shell">
+
+<dialog class="dialog assistant-dialog" id="assistantDialog">
+<button aria-label="Lukk" class="dialog-close" data-close-dialog="">×</button>
+<div class="assistant-modal-head">
+<span class="eyebrow">Støttebot for Loki Lydstudio AS</span>
+<h2>Finn ordningen, skriv utkastet og klargjør innsending.</h2>
+<p>Støtteboten bruker Støtteklang-databasen til å rangere aktuelle ordninger. Den lager et lokalt utkast som standard, eller et mer tilpasset AI-utkast når en sikker backend er konfigurert. Ingen søknad sendes uten eksplisitt godkjenning.</p>
+<div class="bot-status-strip">
+<span class="bot-status-dot" aria-hidden="true"></span>
+<strong id="assistantBackendStatus">Lokalt modus</strong>
+<span id="assistantBackendDescription">Ingen prosjektdata forlater nettleseren.</span>
+</div>
+</div>
+<div class="assistant-shell">
 <form class="assistant-form" id="applicationAssistantForm">
 <div class="assistant-intro">
 <span class="assistant-step">01</span>
-<div><h3>Fortell om prosjektet</h3><p>Du trenger ikke skrive perfekt. Korte stikkord holder.</p></div>
+<div><h3>Studio og prosjekt</h3><p>Profilen lagres bare lokalt i nettleseren. Bruk dokumenterte fakta og konkrete tall.</p></div>
 </div>
+
+<fieldset class="bot-fieldset">
+<legend>Studioopplysninger</legend>
 <div class="form-grid">
+<label class="field">
+<span>Navn på søker</span>
+<input id="assistantApplicant" value="Loki Lydstudio AS" placeholder="Firmanavn" type="text" autocomplete="organization"/>
+</label>
+<label class="field">
+<span>Organisasjonsnummer <small>valgfritt i utkast</small></span>
+<input id="assistantOrgNumber" placeholder="9 sifre" type="text" inputmode="numeric" autocomplete="off"/>
+</label>
+<label class="field">
+<span>Sted / kommune</span>
+<input id="assistantLocation" placeholder="Kommune og fylke" type="text" autocomplete="address-level2"/>
+</label>
+<label class="field">
+<span>Kontaktperson</span>
+<input id="assistantContact" placeholder="Navn" type="text" autocomplete="name"/>
+</label>
 <label class="field field-wide">
+<span>Kort beskrivelse av studioet</span>
+<textarea id="assistantCompanyDescription" placeholder="Tjenester, kompetanse, fasiliteter, målgrupper og virksomhet." rows="3"></textarea>
+</label>
+<label class="field field-wide">
+<span>Dokumenterte styrker og tidligere arbeid</span>
+<textarea id="assistantEvidence" placeholder="Prosjekter, samarbeid, resultater og annen etterprøvbar dokumentasjon." rows="3"></textarea>
+</label>
+</div>
+</fieldset>
+
+<fieldset class="bot-fieldset">
+<legend>Prosjektopplysninger</legend>
+<div class="form-grid">
+<label class="field">
 <span>Søknadstype</span>
 <select id="assistantTemplate">
 <option value="recording">Innspilling og utgivelse</option>
@@ -243,73 +290,106 @@
 <option value="youth">Barn og unge</option>
 </select>
 </label>
-<label class="field field-wide">
-<span>Ordning du søker på <small>valgfritt</small></span>
-<select id="assistantGrant"><option value="">Ingen bestemt ordning</option></select>
-</label>
-<label class="field">
-<span>Navn på søker</span>
-<input id="assistantApplicant" placeholder="Artist, band, selskap eller arena" type="text"/>
-</label>
 <label class="field">
 <span>Prosjektnavn</span>
-<input id="assistantProject" placeholder="Arbeidstittel er nok" type="text"/>
+<input id="assistantProject" placeholder="Arbeidstittel" type="text"/>
 </label>
 <label class="field field-wide">
-<span>Hva skal du gjennomføre?</span>
-<textarea id="assistantIdea" placeholder="Beskriv ideen, formatet og det viktigste du skal gjøre." rows="4"></textarea>
+<span>Hva skal gjennomføres?</span>
+<textarea id="assistantIdea" placeholder="Beskriv aktiviteter, leveranser, metode og hvem som medvirker." rows="4"></textarea>
 </label>
 <label class="field field-wide">
-<span>Kunstnerisk mål og hvorfor prosjektet er viktig</span>
-<textarea id="assistantGoals" placeholder="Hva vil du oppnå, utvikle eller tilføre musikklivet?" rows="3"></textarea>
+<span>Mål og hvorfor prosjektet er viktig</span>
+<textarea id="assistantGoals" placeholder="Kunstnerisk, faglig, kulturell eller næringsmessig betydning." rows="3"></textarea>
 </label>
 <label class="field">
-<span>Målgruppe</span>
-<textarea id="assistantAudience" placeholder="Hvem skal oppleve eller bruke resultatet?" rows="3"></textarea>
+<span>Målgruppe og forventet effekt</span>
+<textarea id="assistantAudience" placeholder="Hvem får nytte av prosjektet, og hva endres?" rows="3"></textarea>
 </label>
 <label class="field">
 <span>Plan og tidsrom</span>
-<textarea id="assistantPlan" placeholder="Viktige aktiviteter, datoer og samarbeidspartnere." rows="3"></textarea>
+<textarea id="assistantPlan" placeholder="Milepæler, datoer, ansvar og samarbeidspartnere." rows="3"></textarea>
 </label>
 <label class="field">
 <span>Totalbudsjett</span>
 <input id="assistantBudget" inputmode="decimal" placeholder="For eksempel 180 000 kr" type="text"/>
 </label>
 <label class="field">
-<span>Beløp du søker om</span>
+<span>Beløp det søkes om</span>
 <input id="assistantFunding" inputmode="decimal" placeholder="For eksempel 75 000 kr" type="text"/>
 </label>
 <label class="field field-wide">
-<span>Egeninnsats, annen finansiering og forventet effekt</span>
-<textarea id="assistantImpact" placeholder="Nevn egeninnsats, partnere, andre inntekter og hva støtten vil utløse." rows="3"></textarea>
+<span>Egeninnsats, annen finansiering og gjennomføringsevne</span>
+<textarea id="assistantImpact" placeholder="Egeninnsats, andre tilskudd, inntekter, partnere og ressurser." rows="3"></textarea>
+</label>
+<label class="field field-wide">
+<span>Nøkkelord <small>skill med komma</small></span>
+<input id="assistantKeywords" placeholder="lydstudio, unge artister, akustikk, profesjonalisering" type="text"/>
 </label>
 </div>
-<div aria-live="polite" class="assistant-guidance" id="assistantGuidance"></div>
+</fieldset>
+
+<div class="assistant-guidance" id="assistantGuidance" aria-live="polite"></div>
 <div class="assistant-form-actions">
-<button class="button button-primary" type="submit">Lag førsteutkast</button>
+<button class="button button-primary" id="assistantMatch" type="button">Finn beste ordninger</button>
+<button class="button button-ink" type="submit">Lag søknadsutkast</button>
 <button class="button button-secondary" id="assistantReset" type="button">Nullstill</button>
 </div>
+
+<div class="bot-match-section">
+<div class="bot-match-heading">
+<div><span class="assistant-step">02</span><h3>Forslag fra databasen</h3></div>
+<span class="bot-match-note">Rangering, ikke vedtak</span>
+</div>
+<div aria-live="polite" class="bot-match-list" id="assistantMatches">
+<p class="muted-copy">Fyll inn prosjektet og velg «Finn beste ordninger».</p>
+</div>
+<label class="field field-wide bot-selected-grant">
+<span>Valgt støtteordning</span>
+<select id="assistantGrant"><option value="">Ingen bestemt ordning</option></select>
+</label>
+</div>
 </form>
+
 <div class="assistant-result">
 <div class="assistant-result-header">
-<div>
-<span class="assistant-step">02</span>
-<h3>Utkastet ditt</h3>
+<div><span class="assistant-step">03</span><h3>Søknadsutkast</h3></div>
+<span class="local-badge" id="assistantModeBadge">Lokalt og privat</span>
 </div>
-<span class="local-badge">Lokalt og privat</span>
-</div>
+<p class="bot-inline-status" id="assistantStatus" aria-live="polite"></p>
 <div aria-live="polite" class="assistant-document is-empty" id="assistantOutput" tabindex="0">
 <div class="assistant-placeholder">
 <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Z"></path><path d="M14 3v4h4M9 12h6M9 16h6M9 8h2"></path></svg>
 <h3>Utkastet vises her</h3>
-<p>Fyll inn feltene til venstre. Assistenten bygger en tydelig prosjektbeskrivelse, begrunnelse, gjennomføringsplan og budsjetttekst.</p>
+<p>Velg en ordning og lag et utkast. Manglende informasjon markeres tydelig, og teksten kan redigeres før godkjenning.</p>
 </div>
 </div>
 <div class="assistant-result-actions">
 <button class="button button-ink" disabled="" id="assistantCopy" type="button">Kopier tekst</button>
 <button class="button button-secondary" disabled="" id="assistantDownload" type="button">Last ned .txt</button>
+<button class="button button-secondary" disabled="" id="assistantPackage" type="button">Last ned søknadspakke</button>
 </div>
-<p class="fine-print">Utkastet er et skriveverktøy, ikke en garanti for støtte. Tilpass teksten til kriteriene hos den aktuelle støtteaktøren og kontroller alle fakta før innsending.</p>
+
+<section class="bot-approval-panel" aria-labelledby="botApprovalTitle">
+<span class="assistant-step">04</span>
+<h3 id="botApprovalTitle">Kontroll og innsending</h3>
+<p>Kontroller søkerkrav, frist, beløp, budsjett, vedlegg og alle påstander hos originalkilden.</p>
+<label class="bot-approval-check">
+<input id="assistantApproval" type="checkbox"/>
+<span>Jeg har kontrollert utkastet og godkjenner at det klargjøres for innsending.</span>
+</label>
+<label class="field">
+<span>Godkjenningsfrase for eventuell direkte e-postsending</span>
+<input id="assistantApprovalPhrase" placeholder="GODKJENT FOR INNSENDING" type="text" autocomplete="off"/>
+</label>
+<div class="assistant-result-actions">
+<button class="button button-primary" disabled="" id="assistantOpenPortal" type="button">Kopier og åpne søknadsportal</button>
+<button class="button button-ink" disabled="" hidden="" id="assistantEmailSubmit" type="button">Opprett e-postutkast</button>
 </div>
-</div></dialog></body>
+<p class="fine-print" id="assistantSubmissionNote">GitHub Pages kan ikke sende til innloggede portaler. Boten kopierer derfor teksten og åpner den offisielle søknadssiden. E-postinnsending krever en sikker backend og en bekreftet mottaker i ordningsdataene.</p>
+</section>
+</div>
+</div>
+</dialog>
+</body>
 </html>

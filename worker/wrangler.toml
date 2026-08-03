@@ -1,0 +1,9 @@
+name = "stotteklang-bot"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://lokliydstudio.github.io"
+OPENAI_MODEL = "gpt-5"
+SUBMISSION_MODE = "draft"
+ALLOWED_RECIPIENT_DOMAINS = ""

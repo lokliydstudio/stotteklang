@@ -1,5 +1,5 @@
-const CACHE = 'stotteklang-urban-reference-v10-motion';
-const CORE = ['./','index.html','styles.css','app.js','manifest.webmanifest','data/grants.json','icons/icon-192.png','icons/icon-512.png'];
+const CACHE = 'stotteklang-urban-reference-v11-stottebot';
+const CORE = ['./','index.html','styles.css','app.js','bot-config.js','manifest.webmanifest','data/grants.json','icons/icon-192.png','icons/icon-512.png'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting())));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', event => {
